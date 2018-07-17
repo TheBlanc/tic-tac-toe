@@ -18,12 +18,18 @@
 .box3, .box6, .box9 { border-right: none; }
 .box7, .box8, .box9 { border-bottom: none; }
 
+
 .box span {
   position: absolute;
   font-size: 200px;
   font-family: serif;
   top: -18px;
   left: 25px;}
+
+.result {
+  font-size: 100px;
+
+}
 
 .container {
   text-align: center;

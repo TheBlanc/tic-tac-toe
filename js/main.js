@@ -22,31 +22,49 @@ var res9 = document.querySelector('#res9');
 
 
 var turn = '0';
+var resultHeader;
+var result = document.querySelector('.result');
 
 var checkWin = function() {
   if (res1.innerText !== "" && res1.innerText === res2.innerText && res2.innerText === res3.innerText) {
-    console.log(res1.innerText + ' WINS!');
-  
+    resultHeader = ("'" + res1.innerText + "'" + ' WINS!');
+    result.innerText = resultHeader;
+    gameOver();
+
   } else if (res4.innerText !== "" && res4.innerText === res5.innerText && res5.innerText === res6.innerText) {
-    console.log(res4.innerText + ' WINS!');
+    resultHeader = ("'" + res4.innerText + "'" + ' WINS!');
+    result.innerText = resultHeader;
+    gameOver();
 
   } else if (res7.innerText !== "" && res7.innerText === res8.innerText && res8.innerText === res9.innerText) {
-    console.log(res7.innerText + ' WINS!');
+    resultHeader = ("'" + res7.innerText + "'" + ' WINS!');
+    result.innerText = resultHeader;
+    gameOver();
 
   } else if (res1.innerText !== "" && res1.innerText === res4.innerText && res4.innerText === res7.innerText) {
-    console.log(res1.innerText + ' WINS!');
+    resultHeader = ("'" + res1.innerText + "'" + ' WINS!');
+    result.innerText = resultHeader;
+    gameOver();
 
   } else if (res2.innerText !== "" && res2.innerText === res5.innerText && res5.innerText === res8.innerText) {
-    console.log(res2.innerText + ' WINS!');
+    resultHeader = ("'" + res2.innerText + "'" + ' WINS!');
+    result.innerText = resultHeader;
+    gameOver();
 
   } else if (res3.innerText !== "" && res3.innerText === res6.innerText && res6.innerText === res9.innerText) {
-    console.log(res3.innerText + ' WINS!');
+    resultHeader = ("'" + res3.innerText + "'" + ' WINS!');
+    result.innerText = resultHeader;
+    gameOver();
 
   } else if (res1.innerText !== "" && res1.innerText === res5.innerText && res5.innerText === res9.innerText) {
-    console.log(res1.innerText + ' WINS!');
+    resultHeader = ("'" + res1.innerText + "'" + ' WINS!');
+    result.innerText = resultHeader;
+    gameOver();
 
   } else if (res3.innerText !== "" && res3.innerText === res5.innerText && res5.innerText === res7.innerText) {
-    console.log(res3.innerText + ' WINS!');
+    resultHeader = ("'" + res3.innerText + "'" + ' WINS!');
+    result.innerText = resultHeader;
+    gameOver();
   }
 }
 
@@ -57,7 +75,6 @@ var draw = function() {
       this.firstChild.innerText = turn;
       checkWin();
 
-
     } else {
       turn = 'X';
       this.firstChild.innerText = turn;
@@ -65,9 +82,6 @@ var draw = function() {
     }
   }
 }
-
-
-
 
 box1.addEventListener('click', draw);
 box2.addEventListener('click', draw);
@@ -78,6 +92,18 @@ box6.addEventListener('click', draw);
 box7.addEventListener('click', draw);
 box8.addEventListener('click', draw);
 box9.addEventListener('click', draw);
+
+var gameOver = function() {
+  box1.removeEventListener('click', draw);
+  box2.removeEventListener('click', draw);
+  box3.removeEventListener('click', draw);
+  box4.removeEventListener('click', draw);
+  box5.removeEventListener('click', draw);
+  box6.removeEventListener('click', draw);
+  box7.removeEventListener('click', draw);
+  box8.removeEventListener('click', draw);
+  box9.removeEventListener('click', draw);
+}
 
 
 

@@ -24,7 +24,8 @@
   font-size: 200px;
   font-family: serif;
   top: -18px;
-  left: 25px;}
+  left: 25px;
+}
 
 .result {
   font-size: 100px;
@@ -34,4 +35,42 @@
 .container {
   text-align: center;
   margin: 4em 0;
+}
+
+
+
+@media screen and (max-width: 620px){
+
+  .result {
+    font-size: 50px;
+  }
+
+  .container {
+    text-align: center;
+    margin: 6em 0;
+  }
+
+
+  .box {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    border: 1.2px solid black;
+    position: relative;
+  }
+
+  .box span {
+    position: absolute;
+    font-size: 100px;
+    font-family: serif;
+    top: -7px;
+    left: 13px;
+  }
+
+  .box1, .box2, .box3 { border-top: none; }
+  .box1, .box4, .box7 { border-left: none; }
+  .box3, .box6, .box9 { border-right: none; }
+  .box7, .box8, .box9 { border-bottom: none; }
+
+
 }

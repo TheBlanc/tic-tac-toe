@@ -28,7 +28,7 @@
 }
 
 .result {
-  font-size: 100px;
+  font-size: 70px;
 
 }
 
@@ -37,13 +37,17 @@
   margin: 4em 0;
 }
 
+img {
+  width: 100%;
+}
+
+.beer {
+  display: none;
+  width: 150px;
+}
 
 
 @media screen and (max-width: 620px){
-
-  .result {
-    font-size: 50px;
-  }
 
   .container {
     text-align: center;
@@ -72,5 +76,19 @@
   .box3, .box6, .box9 { border-right: none; }
   .box7, .box8, .box9 { border-bottom: none; }
 
+
+  img {
+    width: 100%;
+  }
+
+  .beer {
+    display: none;
+    margin-top: 5px;
+    width: 100px;
+  }
+
+  .result {
+    font-size: 25px;
+  }
 
 }

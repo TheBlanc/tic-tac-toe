@@ -8,7 +8,8 @@ a {
   color: black;
 }
 
-.newgame, input[type=button] {
+.newgame {
+  visibility: hidden;
   display: inline-block;
   margin: 3em 0 3em 0;
   height: 2em;

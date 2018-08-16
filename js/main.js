@@ -92,7 +92,7 @@ var draw = function() {
   }
   // Computer's random selection is drawn if more than 1 spaces left
   if ( spaceLeft() > 1 && game === "ON") {
-    setTimeout(function(){ computersMove(); }, 1000);
+    setTimeout(function(){ computersMove(); }, 550);
   }
 }
 

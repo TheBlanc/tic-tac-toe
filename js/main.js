@@ -29,6 +29,7 @@ var turn = '0';
 var resultHeader;
 var result = document.querySelector('.result');
 var beer = document.querySelector('#beer')
+var newgame = document.querySelector('#newgame')
 var game = "ON";
 
 var checkWin = function() {
@@ -137,6 +138,8 @@ startGame();
 
 var gameOver = function() {
   beer.style.display = "inline-block"
+  newgame.style.visibility = "visible"
+
   game = "OFF";
   Object.values(boxes).forEach( function(box) {
     box.removeEventListener('click', draw);

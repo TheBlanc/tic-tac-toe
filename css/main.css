@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: black;
+}
+
+.newgame, input[type=button] {
+  display: inline-block;
+  margin: 3em 0 3em 0;
+  height: 2em;
+  width: 6em;
+  font-size: 1em;
+}
+
 .box {
   display: inline-block;
   height: 200px;
@@ -34,7 +48,7 @@
 
 .container {
   text-align: center;
-  margin: 4em 0;
+  margin: 1em 0;
 }
 
 img {
@@ -49,9 +63,18 @@ img {
 
 @media screen and (max-width: 620px){
 
+  .newgame  {
+    display: inline-block;
+    visibility: hidden;
+    margin: 3em 0 3em 0;
+    height: 2em;
+    width: 6em;
+    font-size: 1em;
+  }
+
   .container {
     text-align: center;
-    margin: 6em 0;
+    margin: 1em 0;
   }
 
 

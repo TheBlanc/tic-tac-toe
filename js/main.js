@@ -28,8 +28,9 @@ var res = {
 var turn = '0';
 var resultHeader;
 var result = document.querySelector('.result');
-var beer = document.querySelector('#beer')
-var newgame = document.querySelector('#newgame')
+var beer = document.querySelector('#beer');
+var cat = document.querySelector('#catsgame');
+var newgame = document.querySelector('#newgame');
 var game = "ON";
 
 var checkWin = function() {
@@ -37,41 +38,49 @@ var checkWin = function() {
   if (res1.innerText !== "" && res1.innerText === res2.innerText && res2.innerText === res3.innerText) {
     resultHeader = ("'" + res1.innerText + "'" + ' WINS!');
     result.innerText = resultHeader;
+    beer.style.display = "inline-block";
     gameOver();
 
   } else if (res4.innerText !== "" && res4.innerText === res5.innerText && res5.innerText === res6.innerText) {
     resultHeader = ("'" + res4.innerText + "'" + ' WINS!');
     result.innerText = resultHeader;
+    beer.style.display = "inline-block";
     gameOver();
 
   } else if (res7.innerText !== "" && res7.innerText === res8.innerText && res8.innerText === res9.innerText) {
     resultHeader = ("'" + res7.innerText + "'" + ' WINS!');
     result.innerText = resultHeader;
+    beer.style.display = "inline-block";
     gameOver();
 
   } else if (res1.innerText !== "" && res1.innerText === res4.innerText && res4.innerText === res7.innerText) {
     resultHeader = ("'" + res1.innerText + "'" + ' WINS!');
     result.innerText = resultHeader;
+    beer.style.display = "inline-block";
     gameOver();
 
   } else if (res2.innerText !== "" && res2.innerText === res5.innerText && res5.innerText === res8.innerText) {
     resultHeader = ("'" + res2.innerText + "'" + ' WINS!');
     result.innerText = resultHeader;
+    beer.style.display = "inline-block";
     gameOver();
 
   } else if (res3.innerText !== "" && res3.innerText === res6.innerText && res6.innerText === res9.innerText) {
     resultHeader = ("'" + res3.innerText + "'" + ' WINS!');
     result.innerText = resultHeader;
+    beer.style.display = "inline-block";
     gameOver();
 
   } else if (res1.innerText !== "" && res1.innerText === res5.innerText && res5.innerText === res9.innerText) {
     resultHeader = ("'" + res1.innerText + "'" + ' WINS!');
     result.innerText = resultHeader;
+    beer.style.display = "inline-block";
     gameOver();
 
   } else if (res3.innerText !== "" && res3.innerText === res5.innerText && res5.innerText === res7.innerText) {
     resultHeader = ("'" + res3.innerText + "'" + ' WINS!');
     result.innerText = resultHeader;
+    beer.style.display = "inline-block";
     gameOver();
   }
 
@@ -94,6 +103,8 @@ var draw = function() {
   // Computer's random selection is drawn if more than 1 spaces left
   if ( spaceLeft() > 1 && game === "ON") {
     setTimeout(function(){ computersMove(); }, 550);
+  } else if ( spaceLeft() === 0 ) {
+    catsGame();
   }
 }
 
@@ -120,6 +131,13 @@ function computersMove() {
   }
 }
 
+function catsGame() {
+  cat.style.display = "inline-block";
+  result.innerText = "Cats Game!";
+  gameOver();
+
+}
+
 function spaceLeft() {
   spaces = 0
   Object.values(res).forEach( function(r) {
@@ -134,34 +152,16 @@ var startGame = function() {
   });
 }
 
-startGame();
-
 var gameOver = function() {
-  beer.style.display = "inline-block"
-  newgame.style.visibility = "visible"
-
+  newgame.style.visibility = "visible";
   game = "OFF";
   Object.values(boxes).forEach( function(box) {
     box.removeEventListener('click', draw);
   });
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+startGame();
 
 
 

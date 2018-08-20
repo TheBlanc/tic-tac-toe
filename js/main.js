@@ -82,6 +82,8 @@ var checkWin = function() {
     result.innerText = resultHeader;
     beer.style.display = "inline-block";
     gameOver();
+  } else {
+    return false;
   }
 
 }
@@ -101,9 +103,9 @@ var draw = function() {
     }
   }
   // Computer's random selection is drawn if more than 1 spaces left
-  if ( spaceLeft() > 1 && game === "ON") {
+  if (spaceLeft() > 1 && game === "ON") {
     setTimeout(function(){ computersMove(); }, 550);
-  } else if ( spaceLeft() === 0 ) {
+  } else if (spaceLeft() === 0 && checkWin() === false) {
     catsGame();
   }
 }
@@ -133,7 +135,7 @@ function computersMove() {
 
 function catsGame() {
   cat.style.display = "inline-block";
-  result.innerText = "Cats Game!";
+  result.innerText = "Cat's Game!";
   gameOver();
 
 }
